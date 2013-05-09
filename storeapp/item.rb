@@ -1,7 +1,8 @@
 class Item
 
-  def initialize
-    @price = 30
+  def initialize(options)
+    @price = options[:price]
+    @weight = options[:weight]
   end
 
  # attr_accessor
@@ -10,11 +11,7 @@ class Item
 
 end
 
-item1 = Item.new
-
-item1.price  = 10
-item1.weight = 21
-
+item1 = Item.new({ :weight => 10, :price => 30 })
 puts item1.price
 puts item1.weight
 
