@@ -4,24 +4,18 @@ class Item
     @price = 30
   end
 
-  def price
-    @price
-  end
-
-  def price=(price_value)
-    @price = price_value
-  end
+ # attr_accessor
+ attr_reader :price, :weight
+ attr_writer :price
 
 end
 
 item1 = Item.new
-item2 = Item.new
-item3 = Item.new
 
-puts item1.price=(10)
-puts item2.price=15
-puts item3.price
+item1.price  = 10
+item1.weight = 21
+
+puts item1.price
+puts item1.weight
 
 p item1
-p item2
-p item3
