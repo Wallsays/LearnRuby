@@ -1,7 +1,7 @@
-if ARGV[0]
-  a = ARGV[0].to_i
+a = if ARGV[0]
+  ARGV[0].to_i
 else
-  a=1
+  1
 end
 
 while a < 10
