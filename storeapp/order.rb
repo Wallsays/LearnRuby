@@ -1,4 +1,4 @@
-class Cart
+class Order
 
   attr_reader :items
 
@@ -6,7 +6,12 @@ class Cart
 
   def initialize
     @items = [] # equals Array.new
+    # ...
   end
 
+  def place
+    # actually place an order
+  end
 
 end
+
