@@ -16,9 +16,13 @@ class Cart
   end
 
   def read_from_file
-    return unless File.exists?("#{@owner}_cart.txt")
+  # begin
     File.readlines("#{@owner}_cart.txt").each {|i| @items << i.to_real_item}
     @items.uniq! # deletes same elements
+  rescue Errno::ENOENT
+    File.open("#{@owner}_cart.txt", "w") {}
+    puts "file #{@owner}_cart.txt created"
+  # end
   end
 
 
