@@ -1,6 +1,6 @@
 require_relative "string"
 require_relative "item_container"
-require_relative "item "
+require_relative "item"
 require_relative "virtual_item"
 require_relative "real_item"
 require_relative "antique_item"
@@ -12,3 +12,9 @@ require_relative "order"
 @items << RealItem.new({ :weight =>100, :price => 101, :name => "kettle" })
 @items << RealItem.new({ :weight =>100, :price => 101, :name => "dishwasher" })
 
+cart = Cart.new("roman")
+cart.add_item RealItem.new({ :weight =>100, :price => 101, :name => "car" })
+cart.add_item RealItem.new({ :weight =>100, :price => 151, :name => "car" })
+cart.add_item RealItem.new({ :weight =>100, :price => 121, :name => "kettle" })
+p cart.all_cars
+p cart.all_kettles
