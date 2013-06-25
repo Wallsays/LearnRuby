@@ -56,6 +56,6 @@ LearnRuby
 45. Rspec matchers
 46. Rspec - вложенные describe и pending тесты
 47. Что тестировать unit-тестами
-48  Proc и lambda, часть 1
+48. Proc и lambda, часть 1
 49. Proc и lambda, часть 2
 50. Rubygems и Bundler
