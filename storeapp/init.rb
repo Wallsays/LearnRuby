@@ -19,3 +19,4 @@ cart.add_item item2
 # p item2.respond_to?(:weight)
 
 puts item1.price
+puts item1.real_price
