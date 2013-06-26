@@ -1,6 +1,6 @@
 class Order
 
-  attr_reader :items
+  attr_reader :items, :placed_at, :time_spent_on_sending_email # getter
 
   include ItemContainer
 
@@ -10,7 +10,8 @@ class Order
   end
 
   def place
-  	thr = Thread.new do
+  	@placed_at = Time.now
+    thr = Thread.new do
 	  Pony.mail({:to => StoreApplication::Admin.email,
 	   :from => "My Store <jason.binwood@gmail.com>",
 	   :via => :smtp, :via_options => {
@@ -29,6 +30,8 @@ class Order
 	  puts "."
 	  sleep(1)
 	end
+	sent_email_at = Time.now
+	@time_spent_on_sending_email = sent_email_at - @placed_at
   end
 
 end
