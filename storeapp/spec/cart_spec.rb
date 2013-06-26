@@ -7,6 +7,13 @@ require_relative "../app/cart"
 
 describe Cart do
 
+  # not really needed
+  # it "makes sure the cart is initialized correctly" do
+  # 	cart = Cart.new(...)
+  # 	cart.items.should be_kind_of(Array)
+  # 	cart.owner.should_not be_nil
+  # end
+
   describe "managing items" do
 
     it "adds items into the cart" do
@@ -18,7 +25,6 @@ describe Cart do
     end
 
   it "removes items from itself"
-
 
   end
   

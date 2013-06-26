@@ -21,6 +21,11 @@ describe ItemContainer do
   	@item2 = Item.new("kettle", price:200)
   end
 
+  # rspec spec item_container.rb -l25
+  it "shows minimum price for item" do
+  	ItemBox.min_price.should be(100)
+  end
+
   it "adds items into the containe" do
   	@box.add_item(@item1)
   	@box.add_item(@item2)
