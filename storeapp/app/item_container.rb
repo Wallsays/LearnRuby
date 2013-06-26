@@ -11,6 +11,8 @@ module ItemContainer
 
   module InstanceMethods
 
+    attr_reader :items
+
     def method_missing(method_name)
       if method_name =~ /^all_/
         # puts "showing all items"
