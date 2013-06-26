@@ -12,7 +12,8 @@ class Cart
     @owner = owner
   end
 
-  def add_items(items)
+  def add_items(*items)
+    @items += items
   end
 
   def save_to_file
