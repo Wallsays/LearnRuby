@@ -13,11 +13,6 @@ StoreApplication.config do |app|
 
 end
 
-p StoreApplication.environment
-p StoreApplication.name
-p StoreApplication::Admin.email
-p StoreApplication::Admin.login
-
 @items = []
 @items << AntiqueItem.new("car", :price => 101, :weight =>100)
 @items << RealItem.new(weight:100, price: 101, name:"kettle")
@@ -28,6 +23,6 @@ cart.add_item RealItem.new({ :weight =>100, :price => 101, :name => "car" })
 cart.add_item RealItem.new({ :weight =>100, :price => 151, :name => "car" })
 cart.add_item RealItem.new({ :weight =>100, :price => 121, :name => "kettle" })
 
-method = "all_cars"
-# p cart.send(method)
-
+order = Order.new
+@items.each {|i| order.add_item(i)}
+order.place
