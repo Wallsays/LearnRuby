@@ -12,6 +12,9 @@ class Cart
     @owner = owner
   end
 
+  def add_items(items)
+  end
+
   def save_to_file
     File.open("#{@owner}_cart.txt","w") do |f|
       @items.each do |i|
