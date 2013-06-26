@@ -1,2 +1,0 @@
-class VirtualItem < Item
-end
