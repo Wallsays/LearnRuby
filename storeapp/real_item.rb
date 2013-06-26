@@ -2,7 +2,7 @@ class RealItem < Item
 
   def initialize(options)
     @weight = options[:weight]
-    super # equals super(options)
+    super(options[:name],options)
   end
 
   attr_reader :weight
