@@ -17,6 +17,7 @@ class StoreApplication
         require_relative "order"
       end
       @instance ||= self # сам этот класс (не экземпляр класса, а сам класс)
+      @instance.freeze   
     end
 
     attr_accessor :name, :environment
@@ -37,6 +38,7 @@ class StoreApplication
           yield(self) # вызов передающегося блока
         end
         @instance ||=self
+        @instance.freeze   
       end
 
       attr_accessor :email, :login

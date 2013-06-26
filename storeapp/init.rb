@@ -13,6 +13,12 @@ StoreApplication.config do |app|
 
 end
 
+unless StoreApplication.frozen?
+  StoreApplication.name = "New name"
+end
+# StoreApplication::Admin.email = "new@email.com"
+p StoreApplication::Admin.email
+
 @items = []
 @items << AntiqueItem.new("car", :price => 101, :weight =>100)
 @items << RealItem.new(weight:100, price: 101, name:"kettle")
