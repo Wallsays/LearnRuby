@@ -11,4 +11,8 @@ class RealItem < Item
     yield weight
   end
 
+  def to_s
+  	super + ":#{self.weight}"
+  end
+
 end
